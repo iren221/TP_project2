@@ -4,124 +4,202 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:backgroundTint="@color/image_color"
     tools:context=".NotificationActivity">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_medium"
+        android:text="@string/setting_up_notifications"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:layout_marginTop="45dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView10"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="10dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/shape_rectangle2" />
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/button_app"
+
+        android:text="@string/back"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/imageView14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView10">
+
+        <CheckBox
+            android:id="@+id/chek_eat"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:text="@string/eat"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:background="@drawable/button_app"
+            android:layoutDirection="rtl"
+            android:buttonTint="@color/white"
+            android:layout_marginBottom="30dp"/>
+
+
+        <CheckBox
+            android:id="@+id/chek_water"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
+            android:background="@drawable/button_app"
+            android:gravity="center"
+            android:text="@string/bathing"
+            android:layout_marginBottom="30dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:layoutDirection="rtl"
+            android:buttonTint="@color/white"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="ЕДА" />
-
-            <CheckBox
-                android:id="@+id/chek_eat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <CheckBox
+            android:id="@+id/chek_apteka"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_height="40dp"
+            android:background="@drawable/button_app"
+            android:elevation="2dp"
+            android:gravity="center"
+            android:layout_marginBottom="30dp"
+            android:text="@string/water"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layoutDirection="rtl"
+            android:buttonTint="@color/white"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ВОДА"
-                android:layout_weight="1"/>
-            <CheckBox
-                android:id="@+id/chek_water"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <CheckBox
+            android:id="@+id/chek_walk"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_height="40dp"
+            android:background="@drawable/button_app"
+            android:gravity="center"
+            android:layout_marginBottom="30dp"
+            android:layout_weight="1"
+            android:text="@string/medications"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layoutDirection="rtl"
+            android:buttonTint="@color/white"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ЛЕКАРСТВА"
-                android:layout_weight="1"/>
-            <CheckBox
-                android:id="@+id/chek_apteka"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <CheckBox
+            android:id="@+id/chek_ches"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/button_app"
+            android:gravity="center"
+            android:text="@string/walk"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layoutDirection="rtl"
+            android:buttonTint="@color/white"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ПРОГУЛКА"
-                android:layout_weight="1"/>
-            <CheckBox
-                android:id="@+id/chek_walk"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ВЫЧЁСЫВАНИЕ"
-                android:layout_weight="1"/>
-            <CheckBox
-                android:id="@+id/chek_ches"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="КУПАНИЕ"
-            android:layout_weight="1"/>
         <CheckBox
             android:id="@+id/chek_kup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        </androidx.appcompat.widget.LinearLayoutCompat>
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/button_app"
+            android:elevation="2dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/combing"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layoutDirection="rtl"
+            android:buttonTint="@color/white"/>
+    </LinearLayout>
 
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginTop="590dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView10"
+        app:srcCompat="@drawable/toolbar" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView14">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/tabbar_profil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#F8C683"
+            app:srcCompat="@drawable/mask_group" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/tabbar_pets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#F8C683"
+            app:srcCompat="@drawable/mask_group_1" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/tabbar_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#F8C683"
+            app:srcCompat="@drawable/mask_group_2" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/tabbar_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#F8C683"
+            app:srcCompat="@drawable/mask_group_3" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

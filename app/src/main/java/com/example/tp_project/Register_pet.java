@@ -68,7 +68,7 @@ public class Register_pet extends AppCompatActivity {
         pet_name = findViewById(R.id.pet_name);
         pet_age = findViewById(R.id.age_pet);
         pet_weight = findViewById(R.id.weight_pet);
-        btn_recommendations = findViewById(R.id.btn_recommendations);
+        btn_recommendations = findViewById(R.id.tabbar_news);
         btn_ok = findViewById(R.id.btn_OK);
 
 

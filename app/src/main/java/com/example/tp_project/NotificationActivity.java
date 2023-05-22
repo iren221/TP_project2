@@ -1,5 +1,6 @@
 package com.example.tp_project;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -12,12 +13,15 @@ import android.os.Handler;
 import android.os.Looper;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -32,6 +36,8 @@ import com.google.firebase.database.ValueEventListener;
 public class NotificationActivity extends AppCompatActivity {
 
     CheckBox chek_eat, chek_water, chek_apteka, chek_walk, chek_ches, chek_kup;
+    AppCompatButton btn_back;
+    AppCompatImageButton tabbar_profil, tabbar_pets, tabbar_news, tabbar_settings;
 
     private static final String CHANNEL_ID = "pet_channel";
     private static final String CHANNEL_ID_WATER = "pet_channel_water";
@@ -40,6 +46,7 @@ public class NotificationActivity extends AppCompatActivity {
     private static final String CHANNEL_ID_CHES = "pet_channel_ches";
     private static final String CHANNEL_ID_KUP = "pet_channel_kup";
 
+    @SuppressLint("MissingInflatedId")
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +60,40 @@ public class NotificationActivity extends AppCompatActivity {
         chek_ches = findViewById(R.id.chek_ches);
         chek_kup = findViewById(R.id.chek_kup);
 
+        btn_back = findViewById(R.id.btn_back);
+
+        tabbar_news = findViewById(R.id.tabbar_news);
+        tabbar_pets = findViewById(R.id.tabbar_pets);
+
 //        if (chek_eat.isChecked()) {
 //            Toast.makeText(this, "Вы выбрали включить уведомления на еду", Toast.LENGTH_SHORT).show();
+
 //        }
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), List_all_pet.class);
+                startActivity(intent);
+            }
+        });
+
+        tabbar_pets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(getApplicationContext(), List_all_pet.class);
+                startActivity(intent2);
+            }
+        });
+
+        tabbar_news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent3 = new Intent(getApplicationContext(), RecommendationsActivity.class);
+                startActivity(intent3);
+            }
+        });
+
         Animal animal = getIntent().getParcelableExtra("animal");
         String key = animal.getId();
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();

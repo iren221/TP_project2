@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TP_project</string>
+    <string name="app_name">PetNote</string>
     <string name="login">Вход</string>
     <string name="registration">Регистрация</string>
     <string name="name">Имя</string>
@@ -23,4 +23,12 @@
     <string name="weight">Вес</string>
     <string name="notice">Настроить уведомления</string>
     <string name="back">Назад</string>
+    <string name="eat">Еда</string>
+    <string name="water">Вода</string>
+    <string name="medications">Лекарства</string>
+    <string name="walk">Прогулка</string>
+    <string name="combing">Вычесывание</string>
+    <string name="bathing">Купание</string>
+    <string name="setting_up_notifications">Настройка уведомлений</string>
+    <string name="pets">ПИТОМЦЫ</string>
 </resources>

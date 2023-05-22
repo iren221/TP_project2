@@ -2,9 +2,12 @@ package com.example.tp_project;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -27,8 +30,10 @@ public class List_all_pet extends AppCompatActivity {
     private RecyclerView recyclerView;
     private AnimalAdapter animalAdapter;
     Button btn_add_pet;
+    AppCompatImageButton tabbar_pets, tabbar_news;
     private Context context = this;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +44,27 @@ public class List_all_pet extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         animalAdapter = new AnimalAdapter(animalList, context);
         recyclerView.setAdapter(animalAdapter);
+
+        tabbar_pets = findViewById(R.id.tabbar_pets);
+        tabbar_news = findViewById(R.id.tabbar_news);
+
+
+
+        tabbar_pets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(getApplicationContext(), List_all_pet.class);
+                startActivity(intent2);
+            }
+        });
+
+        tabbar_news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent3 = new Intent(getApplicationContext(), RecommendationsActivity.class);
+                startActivity(intent3);
+            }
+        });
 
         btn_add_pet.setOnClickListener(new View.OnClickListener() {
             @Override

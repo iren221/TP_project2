@@ -2,6 +2,7 @@ package com.example.tp_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.core.app.NotificationManagerCompat;
 
 import android.annotation.SuppressLint;
@@ -30,7 +31,8 @@ public class AnimalDetails extends AppCompatActivity {
     TextView name, age, weight;
     private Context context;
     ImageButton eat, kupanie, apteka, walk, grumer, puzirek;
-    AppCompatButton btn_notification;
+    AppCompatButton btn_notification, btn_back;
+    AppCompatImageButton tabbar_pets, tabbar_news;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -44,6 +46,10 @@ public class AnimalDetails extends AppCompatActivity {
         walk = findViewById(R.id.walk);
         grumer = findViewById(R.id.grumer);
         puzirek = findViewById(R.id.puzirek);
+
+        tabbar_pets = findViewById(R.id.tabbar_pets);
+        btn_back = findViewById(R.id.btn_back);
+        tabbar_news = findViewById(R.id.tabbar_news);
 
         btn_notification = findViewById(R.id.btn_notification);
 
@@ -70,6 +76,30 @@ public class AnimalDetails extends AppCompatActivity {
             }
         });
 
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), List_all_pet.class);
+                startActivity(intent);
+            }
+        });
+
+        tabbar_pets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(getApplicationContext(), List_all_pet.class);
+                startActivity(intent2);
+            }
+        });
+
+        tabbar_news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent3 = new Intent(getApplicationContext(), RecommendationsActivity.class);
+                startActivity(intent3);
+            }
+        });
+
 
         //1 кнопка
         eat.setOnClickListener(new View.OnClickListener() {
@@ -93,11 +123,11 @@ public class AnimalDetails extends AppCompatActivity {
 
                             } else {
                                 myRef.child("eat").setValue(1);//если данных нет, кнопка красная по умолчанию
-                                //eat.setBackgroundColor(getResources().getColor(R.color.green));
+                                eat.setBackgroundColor(getResources().getColor(R.color.green));
                             }
                         } else {
                             myRef.child("eat").setValue(1); //если данных нет, кнопка красная по умолчанию
-                            //eat.setBackgroundColor(getResources().getColor(R.color.green));
+                            eat.setBackgroundColor(getResources().getColor(R.color.green));
                         }
                     }
 

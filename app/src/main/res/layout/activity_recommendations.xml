@@ -7,21 +7,113 @@
     android:layout_height="match_parent"
     tools:context=".RecommendationsActivity"
     android:id="@+id/pet_layout"
-    android:background="#FFFFFF">
+    android:background="@drawable/gradient_background"
+    android:backgroundTint="@color/image_color">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_news"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/button_app"
+        android:text="Новости"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_medium"
+        android:gravity="center"
+        android:text="Просмотр \nсоветов"
+        android:textColor="@color/white"
+        android:layout_marginStart="30dp"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/shape_rectangle2" />
 
     <ListView
         android:id="@+id/list_recommend"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_recommend"
+        app:srcCompat="@drawable/toolbar" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/tabbar_profil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#F8C683"
+            app:srcCompat="@drawable/mask_group" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/tabbar_pets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#F8C683"
+            app:srcCompat="@drawable/mask_group_1" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/tabbar_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#F8C683"
+            app:srcCompat="@drawable/mask_group_2" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/tabbar_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#F8C683"
+            app:srcCompat="@drawable/mask_group_3" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
